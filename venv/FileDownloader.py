@@ -1,28 +1,26 @@
 import urllib.request
 
-functionR = "TIME_SERIES_INTRADAY"
-symbolR = "MSFT"
-intervalR = "1min"
-apikeyR = "18ADUT83PYOCMCRU"
+symboltest = "MSFT"
+intervaltest = "1min"
+apikey = "18ADUT83PYOCMCRU"
 
 
-def savefileintraday(function, symbol, interval, apikey):
+def savefileintraday(symbol, interval):
     return "https://www.alphavantage.co/query?" \
-           "function=" + function + \
+           "function=TIME_SERIES_INTRADAY" \
            "&symbol=" + symbol + \
            "&interval=" + interval + \
-           "&apikey=" + apikey + \
+           "&apikey=18ADUT83PYOCMCRU" \
            "&datatype=csv"
 
-def savefiledaily(function, symbol, interval, apikey):
+def savefiledaily(symbol):
     return "https://www.alphavantage.co/query?" \
-           "function=" + function + \
+           "function=TIME_SERIES_DAILY" \
            "&symbol=" + symbol + \
-           "&interval=" + interval + \
-           "&apikey=" + apikey + \
+           "&apikey=18ADUT83PYOCMCRU" \
            "&datatype=csv"
 
 
-urllib.request.urlretrieve(savefileintraday(functionR, symbolR, intervalR, apikeyR), "file.csv")
+urllib.request.urlretrieve(savefileintraday(symboltest, intervaltest), "file.csv")
 
 # print(savefile(functionR, symbolR, intervalR, apikeyR))
