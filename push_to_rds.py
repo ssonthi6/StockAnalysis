@@ -143,8 +143,10 @@ REGION="us-east-1"
 DBNAME="postgres"
 
 fp = "/Users/sohamsonthi/Downloads/opt/SPY/2023-01-24_23:18:42/1676592000.txt"
-tot_path = "/Users/sohamsonthi/Downloads/opt/SPY/**/*.txt"
+tot_path = "/home/optn/Downloads/SPY/**/*.txt"
 files = glob.glob(tot_path, recursive=True)
+files.remove("/home/optn/Downloads/SPY/exp.txt")
+print(len(files))
 
 ticker = tot_path.split("/")[-3]
 
